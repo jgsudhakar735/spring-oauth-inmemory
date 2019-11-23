@@ -1,0 +1,30 @@
+# Application Port Number
+server:
+  port: 8282
+  # Application COntext Path
+  servlet:
+    context-path: /spring-oauth-inmemory
+
+# Either to use Properties file or java configuration 
+use:
+  javaconfiguration: true
+
+# User Detail which is used by Authorization server to provide a token    
+spring:
+  security:
+    user:
+      name: Sudhakar
+      password: Sudhakar
+      roles: ADMIN,USER
+
+# Cclient Credentials      
+security:
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: mpin
+      access-token-validity-seconds: 5000
+      scope: READ,WRITE,DELETE
+      authorized-grant-types: refresh_token,authorization_code,password,client_credentials
+    authorization:
+      check-token-access: permitAll  
